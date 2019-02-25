@@ -1,0 +1,6 @@
+# IntelliJ stuff
+BarabashIndividual.iml
+.idea/
+
+# Build
+out/
