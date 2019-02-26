@@ -1,17 +1,23 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Doctor {
 
     private int id;
-    private String name;
+    private String surname;
     private String specialty;
     private int experience;
+    private List<Recipe> writtenRecipes;
 
-    public Doctor(int id, String name, String specialty, int experience) {
+    public Doctor(int id, String surname, String specialty, int experience) {
         this.id = id;
-        this.name = name;
+        this.surname = surname;
         this.specialty = specialty;
         this.experience = experience;
+
+        writtenRecipes = new ArrayList<>();
     }
 
     public int getId() {
@@ -19,7 +25,7 @@ public class Doctor {
     }
 
     public String getName() {
-        return name;
+        return surname;
     }
 
     public String getSpecialty() {
@@ -30,7 +36,15 @@ public class Doctor {
         return experience;
     }
 
+    public List<Recipe> getWrittenRecipes() {
+        return writtenRecipes;
+    }
+
+    public void setWrittenRecipes(List<Recipe> writtenRecipes) {
+        this.writtenRecipes = writtenRecipes;
+    }
+
     public String toString() {
-        return name + ", " + specialty + ", " + experience;
+        return surname + ", " + specialty + ", " + experience;
     }
 }

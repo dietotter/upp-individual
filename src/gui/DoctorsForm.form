@@ -38,6 +38,7 @@
                         <item value="Отоларинголог, ЛУЛ"/>
                         <item value="Дебіл, лвл 2"/>
                       </model>
+                      <selectionMode value="0"/>
                     </properties>
                   </component>
                 </children>

@@ -1,11 +1,17 @@
 package gui;
 
+import com.company.DemoLogic;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class MainFrame extends JFrame {
 
+    private DemoLogic demoLogic;
+
     public MainFrame() {
+
+        demoLogic = new DemoLogic();
 
         setTitle("Головне меню");
         setMinimumSize(new Dimension(800, 600));
@@ -26,4 +32,7 @@ public class MainFrame extends JFrame {
         repaint();
     }
 
+    public DemoLogic getDemoLogic() {
+        return demoLogic;
+    }
 }

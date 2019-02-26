@@ -38,6 +38,7 @@
                         <item value="Пацієнт, Вася"/>
                         <item value="КОД2, Петро Іванович"/>
                       </model>
+                      <selectionMode value="0"/>
                     </properties>
                   </component>
                 </children>
