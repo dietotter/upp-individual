@@ -4,28 +4,44 @@ import model.*;
 
 public class DemoLogic {
 
-    // ALL DRUGS
-    private Drug[] drugsArr = {
-            new Drug(0, "Ібупрофен", "ВОЛЯ ТОВ", 1000),
-            new Drug(1, "Парацетамол", "Дарниця", 1100),
-            new Drug(2, "Аспірін", "ВОЛЯ ТОВ", 900),
-            new Drug(3, "Йод", "Чернігівниця", 535.6)
-    };
-
     // ALL DRUGSTORES
     private Drugstore[] drugstoresArr = {
             new Drugstore(0, "Аптека низьких цін", "Сковороди, 2"),
             new Drugstore(1, "Аптека Бджілка", "Хрещатик, 79")
     };
 
+    private Drug[] drugsArr;
     private Recipe[] recipesArr;
     private Doctor[] doctorsArr;
     private Patient[] patientsArr;
 
     public DemoLogic() {
+        drugsArr = prepareDrugs();
         recipesArr = prepareRecipes();
         doctorsArr = prepareDoctors();
         patientsArr = preparePatients();
+    }
+
+    // ALL DRUGS
+    public Drug[] prepareDrugs() {
+        Drug[] arr = {
+                new Drug(0, "Ібупрофен", "ВОЛЯ ТОВ", 1000),
+                new Drug(1, "Парацетамол", "Дарниця", 1100),
+                new Drug(2, "Аспірін", "ВОЛЯ ТОВ", 900),
+                new Drug(3, "Йод", "Чернігівниця", 535.6)
+        };
+
+        arr[0].getDrugstoresSelling().add(new DrugInDrugstore(drugstoresArr[0], "18.10.2018", 20.5));
+
+        arr[1].getDrugstoresSelling().add(new DrugInDrugstore(drugstoresArr[0], "18.10.2018", 30));
+        arr[1].getDrugstoresSelling().add(new DrugInDrugstore(drugstoresArr[1], "18.10.2018", 32));
+
+        arr[2].getDrugstoresSelling().add(new DrugInDrugstore(drugstoresArr[1], "18.10.2018", 12.95));
+        arr[2].getDrugstoresSelling().add(new DrugInDrugstore(drugstoresArr[0], "18.10.2018", 12.4));
+
+        arr[3].getDrugstoresSelling().add(new DrugInDrugstore(drugstoresArr[1], "18.10.2018", 9));
+
+        return arr;
     }
 
     // ALL RECIPES

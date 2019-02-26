@@ -17,6 +17,7 @@ public class PatientsForm implements View {
 
     public PatientsForm(MainFrame mainFrame) {
 
+        // set up list with demo data
         setUpList(mainFrame.getDemoLogic());
 
         returnButton.addActionListener((ActionEvent e) -> {

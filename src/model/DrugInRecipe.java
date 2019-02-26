@@ -19,6 +19,6 @@ public class DrugInRecipe {
     }
 
     public String toString() {
-        return drug.toString() + "\nк-сть: " + amount;
+        return drug.toString() + ", к-сть: " + amount;
     }
 }
