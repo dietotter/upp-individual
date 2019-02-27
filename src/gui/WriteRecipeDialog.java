@@ -1,6 +1,7 @@
 package gui;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 
 public class WriteRecipeDialog extends JDialog {
@@ -14,7 +15,21 @@ public class WriteRecipeDialog extends JDialog {
     private JTextField drugQuantityField1;
     private JPanel drugPanel;
 
+    private JTextField drugNameField2;
+    private JTextField drugNameField3;
+    private JTextField drugNameField4;
+    private JTextField drugNameField5;
+    private JTextField drugQuantityField2;
+    private JTextField drugQuantityField3;
+    private JTextField drugQuantityField4;
+    private JTextField drugQuantityField5;
+
+    private int visibleDrugFieldCounter = 1;
+
     public WriteRecipeDialog() {
+        setUpDrugFields();
+
+        setTitle("Виписати рецепт");
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -31,6 +46,11 @@ public class WriteRecipeDialog extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 onCancel();
             }
+        });
+
+        // add another field for drug
+        addDrugButton.addActionListener((ActionEvent e) -> {
+            addDrugRow();
         });
 
         // call onCancel() when cross is clicked
@@ -60,4 +80,49 @@ public class WriteRecipeDialog extends JDialog {
         // add your code here if necessary
         dispose();
     }
+
+    private void addDrugRow() {
+
+        invalidate();
+
+        switch (visibleDrugFieldCounter) {
+            case 1:
+                drugNameField2.setVisible(true);
+                drugQuantityField2.setVisible(true);
+                break;
+            case 2:
+                drugNameField3.setVisible(true);
+                drugQuantityField3.setVisible(true);
+                break;
+            case 3:
+                drugNameField4.setVisible(true);
+                drugQuantityField4.setVisible(true);
+                break;
+            case 4:
+                drugNameField5.setVisible(true);
+                drugQuantityField5.setVisible(true);
+        }
+
+        visibleDrugFieldCounter++;
+
+        validate();
+
+        repaint();
+    }
+
+    private void setUpDrugFields() {
+
+        drugNameField2.setVisible(false);
+        drugQuantityField2.setVisible(false);
+
+        drugNameField3.setVisible(false);
+        drugQuantityField3.setVisible(false);
+
+        drugNameField4.setVisible(false);
+        drugQuantityField4.setVisible(false);
+
+        drugNameField5.setVisible(false);
+        drugQuantityField5.setVisible(false);
+    }
+
 }

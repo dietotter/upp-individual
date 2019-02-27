@@ -45,4 +45,5 @@ public class PatientsForm implements View {
     public String getTitle() {
         return "Пацієнти";
     }
+
 }

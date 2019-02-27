@@ -4,6 +4,7 @@ import model.DrugInDrugstore;
 import model.Drugstore;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -18,6 +19,7 @@ public class DrugstoresDialog extends JDialog {
         // set up list
         setUpList(drugstores);
 
+        setTitle("Наявні у аптеках");
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -41,4 +43,5 @@ public class DrugstoresDialog extends JDialog {
         // add your code here
         dispose();
     }
+
 }

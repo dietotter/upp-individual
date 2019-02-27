@@ -1,6 +1,7 @@
 package gui;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 
 public class AddDoctorDialog extends JDialog {
@@ -12,6 +13,7 @@ public class AddDoctorDialog extends JDialog {
     private JTextField experienceField;
 
     public AddDoctorDialog() {
+        setTitle("Додати лікаря");
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -57,4 +59,5 @@ public class AddDoctorDialog extends JDialog {
         // add your code here if necessary
         dispose();
     }
+
 }
