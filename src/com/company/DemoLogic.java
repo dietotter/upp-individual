@@ -2,7 +2,12 @@ package com.company;
 
 import model.*;
 
+import java.util.Arrays;
+
 public class DemoLogic {
+
+    public static int doctorId = 2;
+    public static int recipeId = 3;
 
     // ALL DRUGSTORES
     private Drugstore[] drugstoresArr = {
@@ -95,6 +100,18 @@ public class DemoLogic {
         return arr;
     }
 
+    public void addDoctor(Doctor doctor) {
+        doctorsArr = Arrays.copyOf(doctorsArr, doctorsArr.length + 1);
+        doctorsArr[doctorsArr.length - 1] = doctor;
+        doctorId++;
+    }
+
+    public void addRecipe(Recipe recipe) {
+        recipesArr = Arrays.copyOf(recipesArr, recipesArr.length + 1);
+        recipesArr[recipesArr.length - 1] = recipe;
+        recipeId++;
+    }
+
     public Drug[] getDrugsArr() {
         return drugsArr;
     }
@@ -113,5 +130,25 @@ public class DemoLogic {
 
     public Patient[] getPatientsArr() {
         return patientsArr;
+    }
+
+    public void setDrugstoresArr(Drugstore[] drugstoresArr) {
+        this.drugstoresArr = drugstoresArr;
+    }
+
+    public void setDrugsArr(Drug[] drugsArr) {
+        this.drugsArr = drugsArr;
+    }
+
+    public void setRecipesArr(Recipe[] recipesArr) {
+        this.recipesArr = recipesArr;
+    }
+
+    public void setDoctorsArr(Doctor[] doctorsArr) {
+        this.doctorsArr = doctorsArr;
+    }
+
+    public void setPatientsArr(Patient[] patientsArr) {
+        this.patientsArr = patientsArr;
     }
 }

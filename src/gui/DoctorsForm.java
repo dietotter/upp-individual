@@ -29,7 +29,7 @@ public class DoctorsForm implements View {
         });
 
         addDoctorButton.addActionListener((ActionEvent e) -> {
-            new AddDoctorDialog().setVisible(true);
+            new AddDoctorDialog(mainFrame, this).setVisible(true);
         });
     }
 

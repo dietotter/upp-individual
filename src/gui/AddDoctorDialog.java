@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+import com.company.DemoLogic;
+import model.Doctor;
+
 public class AddDoctorDialog extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
@@ -12,7 +15,7 @@ public class AddDoctorDialog extends JDialog {
     private JTextField specialtyField;
     private JTextField experienceField;
 
-    public AddDoctorDialog() {
+    public AddDoctorDialog(MainFrame mainFrame, View currentView) {
         setTitle("Додати лікаря");
         setContentPane(contentPane);
         setModal(true);
@@ -22,7 +25,7 @@ public class AddDoctorDialog extends JDialog {
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                onOK();
+                onOK(mainFrame, currentView);
             }
         });
 
@@ -50,8 +53,13 @@ public class AddDoctorDialog extends JDialog {
         pack();
     }
 
-    private void onOK() {
+    private void onOK(MainFrame mainFrame, View currentView) {
         // add your code here
+        Doctor doctor = new Doctor(DemoLogic.doctorId, nameField.getText(), specialtyField.getText(), Integer.parseInt(experienceField.getText()));
+
+        mainFrame.getDemoLogic().addDoctor(doctor);
+        mainFrame.changeView(currentView, new DoctorsForm(mainFrame));
+
         dispose();
     }
 
