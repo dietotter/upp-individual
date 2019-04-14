@@ -35,7 +35,9 @@ public class RecipesForm implements View {
 
     private void setUpList(List<Recipe> recipes) {
         list.setListData(recipes.toArray());
-        list.setSelectedIndex(0);
+        if (!recipes.isEmpty()) {
+            list.setSelectedIndex(0);
+        }
 
         drugsList.setListData(((Recipe) list.getSelectedValue()).getPrescribedDrugs().toArray());
         drugsList.setSelectedIndex(0);

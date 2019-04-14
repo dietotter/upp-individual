@@ -52,7 +52,7 @@ public class DemoLogic {
     // ALL RECIPES
     public Recipe[] prepareRecipes() {
         Recipe[] arr = {
-                new Recipe(0, "20.02.2019", "Вася", "Якийсь-чувак"),
+                new Recipe(0, "20.02.2019", "Вася", "Якийсь"),
                 new Recipe(1, "13.01.2019", "Петя", "Побігайчик"),
                 new Recipe(2, "31.12.2018", "Вася", "Побігайчик")
         };
@@ -88,7 +88,7 @@ public class DemoLogic {
     // ALL PATIENTS
     public Patient[] preparePatients() {
         Patient[] arr = {
-                new Patient("AS123456", "Якийсь-чувак", "11.12.1990"),
+                new Patient("AS123456", "Якийсь", "11.12.1990"),
                 new Patient("QW789012", "Побігайчик", "01.05.1965")
         };
 
@@ -109,6 +109,8 @@ public class DemoLogic {
     public void addRecipe(Recipe recipe) {
         recipesArr = Arrays.copyOf(recipesArr, recipesArr.length + 1);
         recipesArr[recipesArr.length - 1] = recipe;
+        patientsArr[0].getWrittenRecipes().add(recipesArr[recipesArr.length - 1]);
+        doctorsArr[0].getWrittenRecipes().add(recipesArr[recipesArr.length - 1]);
         recipeId++;
     }
 

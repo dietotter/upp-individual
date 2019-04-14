@@ -29,7 +29,7 @@ public class PatientsForm implements View {
         });
 
         writeRecipeButton.addActionListener((ActionEvent e) -> {
-            new WriteRecipeDialog().setVisible(true);
+            new WriteRecipeDialog(mainFrame, this, ((Patient) list.getSelectedValue()).getSurname()).setVisible(true);
         });
     }
 

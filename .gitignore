@@ -4,6 +4,7 @@ BarabashIndividual.iml
 
 # Build
 out/
+Barabash.zip
 
 # Mac OS stuff
 .DS_Store
